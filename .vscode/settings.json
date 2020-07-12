@@ -3,5 +3,9 @@
     "postgres",
     "respawn",
     "typeorm"
+  ],
+  "cSpell.words": [
+    "citext",
+    "varchar"
   ]
 }

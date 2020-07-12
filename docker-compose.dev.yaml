@@ -5,9 +5,9 @@ services:
     image: postgres:12
     container_name: dev_project-better_db
     environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: project-better
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
     volumes:
       - type: volume
         source: db-data
