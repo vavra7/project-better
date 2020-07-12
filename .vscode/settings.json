@@ -1,5 +1,11 @@
 {
   "cSpell.ignoreWords": [
+    "apollo",
+    "apollo cache inmemory",
+    "cache",
+    "codegen",
+    "esnext",
+    "inmemory",
     "postgres",
     "respawn",
     "typeorm"
