@@ -1,4 +1,5 @@
 {
+  "name": "project-better",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -6,6 +7,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.0",
+    "concurrently": "^5.2.0",
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
