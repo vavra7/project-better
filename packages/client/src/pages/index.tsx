@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Apollo from '../lib/apollo';
-import { TestQuery } from '../graphql/test.graphql';
+import testQuery from '../graphql/test.gql';
 
 const Index: NextPage = props => {
   return (
@@ -12,7 +12,7 @@ const Index: NextPage = props => {
 
 Index.getInitialProps = async () => {
   const apolloClient = Apollo.getClient();
-  const { data } = await apolloClient.query({ query: TestQuery });
+  const { data } = await apolloClient.query({ query: testQuery });
 
   return {
     data
