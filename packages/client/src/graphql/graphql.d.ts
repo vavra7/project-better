@@ -1,6 +1,7 @@
-declare module '*.gql' {
-  import { DocumentNode } from 'gql';
+declare module '*/test.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const TestQuery: DocumentNode;
 
-  const value: DocumentNode;
-  export = value;
+  export default defaultDocument;
 }
