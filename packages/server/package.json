@@ -8,7 +8,8 @@
     "dev": "ts-node-dev --no-notify --respawn src/index",
     "build": "tsc",
     "start": "node dist/index.js",
-    "lint": "eslint 'src/**/*.{js,ts}'"
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "codegen": "graphql-codegen --config codegen.json --watch 'src/modules/**/*.gql'"
   },
   "dependencies": {
     "@graphql-tools/graphql-file-loader": "^6.0.12",
@@ -24,6 +25,8 @@
     "uuid": "^8.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.0",
+    "@graphql-codegen/typescript-resolvers": "^1.17.0",
     "@types/express": "^4.17.7",
     "@types/node": "^14.0.22",
     "@types/uuid": "^8.0.0",

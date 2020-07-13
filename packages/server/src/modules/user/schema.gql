@@ -1,3 +1,7 @@
   type Query {
-    hello: String
+    hello: String!
+  }
+
+  type Mutation {
+    registerUser: Boolean!
   }
