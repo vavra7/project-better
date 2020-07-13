@@ -1,14 +1,14 @@
 {
   "overwrite": true,
   "generates": {
-    "src/modules/user/modelGenerated.ts": {
+    "src/modules/user/typesGenerated.ts": {
       "schema": "src/modules/user/schema.gql",
       "plugins": [
         "typescript",
         "typescript-resolvers"
       ]
     },
-    "src/modules/listing/modelGenerated.ts": {
+    "src/modules/listing/typesGenerated.ts": {
       "schema": "src/modules/listing/schema.gql",
       "plugins": [
         "typescript",

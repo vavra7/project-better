@@ -1,4 +1,4 @@
-import { QueryResolvers, MutationResolvers } from './modelGenerated';
+import { QueryResolvers, MutationResolvers } from './typesGenerated';
 import { hello } from './resolvers/hello';
 import { registerUser } from './resolvers/registerUser';
 
