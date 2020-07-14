@@ -1,24 +1,21 @@
 import { loadSchemaSync } from '@graphql-tools/load';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
 import { addResolversToSchema } from '@graphql-tools/schema';
-import { userQuery, userMutation } from './user';
-import { listingQuery } from './listing';
+import { userResolvers } from './user';
+import { listingResolvers } from './listing';
 
-const schema = loadSchemaSync(__dirname + '/**/*.gql', {
+let _schema = loadSchemaSync(__dirname + '/**/*.gql', {
   loaders: [new GraphQLFileLoader()]
 });
 
-const resolvers = {
-  Query: {
-    ...userQuery,
-    ...listingQuery
-  },
-  Mutation: {
-    ...userMutation
-  }
-};
-
-export const schemaWithResolvers = addResolversToSchema({
-  schema,
-  resolvers
+_schema = addResolversToSchema({
+  schema: _schema,
+  resolvers: listingResolvers as any
 });
+
+_schema = addResolversToSchema({
+  schema: _schema,
+  resolvers: userResolvers as any
+});
+
+export const schema = _schema;

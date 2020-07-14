@@ -1,6 +1,8 @@
-import { QueryResolvers } from './typesGenerated';
 import { getListing } from './resolvers/getResolver';
+import { Resolvers } from './typesGenerated';
 
-export const listingQuery: QueryResolvers = {
-  getListing
+export const listingResolvers: Resolvers = {
+  Query: {
+    getListing
+  }
 };

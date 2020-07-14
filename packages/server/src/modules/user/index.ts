@@ -1,11 +1,12 @@
-import { QueryResolvers, MutationResolvers } from './typesGenerated';
+import { Resolvers } from './typesGenerated';
 import { hello } from './resolvers/hello';
 import { registerUser } from './resolvers/registerUser';
 
-export const userQuery: QueryResolvers = {
-  hello
-};
-
-export const userMutation: MutationResolvers = {
-  registerUser
+export const userResolvers: Resolvers = {
+  Query: {
+    hello
+  },
+  Mutation: {
+    registerUser
+  }
 };

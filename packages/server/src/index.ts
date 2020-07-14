@@ -3,7 +3,7 @@ import express from 'express';
 import { createConnection } from 'typeorm';
 import { dbConfig } from './config/dbConfig';
 import { ApolloServer } from 'apollo-server-express';
-import { schemaWithResolvers } from './modules';
+import { schema } from './modules';
 
 const PORT = 4000;
 
@@ -15,7 +15,7 @@ const PORT = 4000;
   const app = express();
 
   const apolloServer = new ApolloServer({
-    schema: schemaWithResolvers
+    schema
   });
 
   apolloServer.applyMiddleware({ app, cors: false });
