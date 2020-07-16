@@ -3,6 +3,7 @@ dev:
 	npx concurrently \
 		"cd packages/common && yarn dev" \
 		"cd packages/server && yarn dev" \
+		"cd packages/server && yarn codegen" \
 		"cd packages/client && yarn dev"
 
 build:

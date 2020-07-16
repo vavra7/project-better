@@ -2,14 +2,14 @@
   "overwrite": true,
   "generates": {
     "src/modules/user/typesGenerated.ts": {
-      "schema": "src/modules/user/schema.gql",
+      "schema": "src/modules/user/typeDefs.gql",
       "plugins": [
         "typescript",
         "typescript-resolvers"
       ]
     },
     "src/modules/listing/typesGenerated.ts": {
-      "schema": "src/modules/listing/schema.gql",
+      "schema": "src/modules/listing/typeDefs.gql",
       "plugins": [
         "typescript",
         "typescript-resolvers"

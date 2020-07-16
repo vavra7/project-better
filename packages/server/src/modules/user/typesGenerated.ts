@@ -1,6 +1,8 @@
 import { GraphQLResolveInfo } from 'graphql';
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] };
+export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } &
+  { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -8,6 +10,13 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+};
+
+export type RegisterInput = {
+  email: Scalars['String'];
+  firstName: Scalars['String'];
+  lastName: Scalars['String'];
+  password: Scalars['String'];
 };
 
 export type Query = {
@@ -18,6 +27,10 @@ export type Query = {
 export type Mutation = {
   __typename?: 'Mutation';
   registerUser: Scalars['Boolean'];
+};
+
+export type MutationRegisterUserArgs = {
+  data: RegisterInput;
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -112,16 +125,18 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Query: ResolverTypeWrapper<{}>;
+  RegisterInput: RegisterInput;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Query: ResolverTypeWrapper<{}>;
   Mutation: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Query: {};
+  RegisterInput: RegisterInput;
   String: Scalars['String'];
+  Query: {};
   Mutation: {};
   Boolean: Scalars['Boolean'];
 };
@@ -137,7 +152,12 @@ export type MutationResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = {
-  registerUser?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  registerUser?: Resolver<
+    ResolversTypes['Boolean'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationRegisterUserArgs, 'data'>
+  >;
 };
 
 export type Resolvers<ContextType = any> = {

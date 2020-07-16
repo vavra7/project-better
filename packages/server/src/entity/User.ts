@@ -1,4 +1,12 @@
-import { BaseEntity, Entity, PrimaryColumn, BeforeInsert, Column } from 'typeorm';
+import {
+  BaseEntity,
+  Entity,
+  PrimaryColumn,
+  BeforeInsert,
+  Column,
+  UpdateDateColumn,
+  CreateDateColumn
+} from 'typeorm';
 import { v4 } from 'uuid';
 
 @Entity()
@@ -14,6 +22,15 @@ export class User extends BaseEntity {
 
   @Column('varchar', { length: 50 })
   lastName: string;
+
+  @Column('text')
+  password: string;
+
+  @CreateDateColumn({ type: 'timestamp' })
+  createdAt: Date;
+
+  @UpdateDateColumn({ type: 'timestamp' })
+  updatedAt: Date;
 
   @BeforeInsert()
   generateId(): void {
