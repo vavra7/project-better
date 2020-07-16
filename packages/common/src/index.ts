@@ -1,3 +1,6 @@
-export type Test = () => string;
+import _translations from './modules/translations';
 
-export const test: Test = () => 'Hello from common!';
+export * from './modules/errors/types';
+export * from './modules/translations/types';
+
+export const translations = _translations;
