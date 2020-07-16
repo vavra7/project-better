@@ -1,12 +1,15 @@
+import { AuthenticationError } from 'apollo-server-express';
+import { t } from '../lib/translations';
+
 type MiddlewareResolver = (root: any, args: any, context: any, info: any) => any;
 type MiddlewareFn = (next: any) => MiddlewareResolver;
 type Middleware = () => MiddlewareFn;
 
 export const isAuthenticated: Middleware = () => next => async (root, args, context, info) => {
-  const test = false;
+  const test = true;
 
   if (test) {
-    throw new Error('You are not authenticated!');
+    throw new AuthenticationError(t('common.errors.unauthenticated'));
   }
 
   return next(root, args, context, info);

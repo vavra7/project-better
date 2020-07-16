@@ -1,3 +1,4 @@
 {
-  "emailAlreadyInUse": "Email is already in use."
+  "emailAlreadyInUse": "Email is already in use.",
+  "unauthenticated": "User is not authenticated."
 }

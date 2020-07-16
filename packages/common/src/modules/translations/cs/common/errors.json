@@ -1,3 +1,4 @@
 {
-  "emailAlreadyInUse": "Daný email se již používá."
+  "emailAlreadyInUse": "Daný email se již používá.",
+  "unauthenticated": "Uživatel není přihlášen."
 }

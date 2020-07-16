@@ -1,3 +1,4 @@
 export enum ErrorCodes {
-  EmailInUse = 'EMAIL_IN_USE'
+  EmailInUse = 'EMAIL_IN_USE',
+  Unauthenticated = 'UNAUTHENTICATED'
 }
