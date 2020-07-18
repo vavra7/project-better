@@ -1,4 +1,5 @@
 {
-  "emailAlreadyInUse": "Daný email se již používá.",
-  "unauthenticated": "Uživatel není přihlášen."
+  "emailAlreadyInUse": "daný email se již používá",
+  "unauthenticated": "uživatel není přihlášen",
+  "badUserInput": "ve vstupních datech se nachází validační chyby: {number}"
 }

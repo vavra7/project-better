@@ -1,0 +1,8 @@
+{
+  "user": {
+    "email": "email",
+    "firstName": "jméno",
+    "lastName": "příjmení",
+    "password": "heslo"
+  }
+}

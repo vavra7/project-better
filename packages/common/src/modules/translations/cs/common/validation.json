@@ -1,0 +1,6 @@
+{
+  "required": "{required} je povinný údaj",
+  "stringMin": "{label} musí mít {min} a více znaků",
+  "stringMax": "{label} může mít maximálně {max} znaků",
+  "email": "{label} musí být validní emailová adresa"
+}

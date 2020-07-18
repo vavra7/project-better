@@ -1,5 +1,5 @@
 import { AuthenticationError } from 'apollo-server-express';
-import { t } from '../lib/translations';
+import { t } from '@project-better/common';
 
 type MiddlewareResolver = (root: any, args: any, context: any, info: any) => any;
 type MiddlewareFn = (next: any) => MiddlewareResolver;

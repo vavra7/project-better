@@ -1,13 +1,7 @@
-import { BaseEntity, PrimaryColumn, BeforeInsert, Entity } from 'typeorm';
-import { v4 } from 'uuid';
+import { BaseEntity, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Listing extends BaseEntity {
-  @PrimaryColumn('uuid')
+  @PrimaryGeneratedColumn('uuid')
   id: string;
-
-  @BeforeInsert()
-  generateId(): void {
-    this.id = v4();
-  }
 }

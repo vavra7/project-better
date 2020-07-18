@@ -7,9 +7,12 @@
     "esnext",
     "inmemory",
     "middlewares",
+    "n",
     "postgres",
     "respawn",
-    "typeorm"
+    "typeorm",
+    "valida",
+    "validační"
   ],
   "cSpell.words": [
     "citext",

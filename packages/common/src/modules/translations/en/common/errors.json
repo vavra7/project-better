@@ -1,4 +1,5 @@
 {
-  "emailAlreadyInUse": "Email is already in use.",
-  "unauthenticated": "User is not authenticated."
+  "emailAlreadyInUse": "email is already in use",
+  "unauthenticated": "user is not authenticated",
+  "badUserInput": "{number} validation errors occurred"
 }

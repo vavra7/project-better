@@ -8,7 +8,7 @@ export const dbConfig: ConnectionOptions = {
   database: 'project-better',
   username: 'user',
   password: 'pass',
-  dropSchema: false,
+  dropSchema: true,
   synchronize: true,
   logging: false,
   entities

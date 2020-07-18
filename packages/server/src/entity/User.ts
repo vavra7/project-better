@@ -1,17 +1,15 @@
 import {
   BaseEntity,
   Entity,
-  PrimaryColumn,
-  BeforeInsert,
   Column,
   UpdateDateColumn,
-  CreateDateColumn
+  CreateDateColumn,
+  PrimaryGeneratedColumn
 } from 'typeorm';
-import { v4 } from 'uuid';
 
 @Entity()
 export class User extends BaseEntity {
-  @PrimaryColumn('uuid')
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column('citext', { unique: true })
@@ -31,9 +29,4 @@ export class User extends BaseEntity {
 
   @UpdateDateColumn({ type: 'timestamp' })
   updatedAt: Date;
-
-  @BeforeInsert()
-  generateId(): void {
-    this.id = v4();
-  }
 }
